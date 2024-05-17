@@ -15,7 +15,7 @@
     Password:<br><input type="password" name="pwd" />
     <br><br>
     <input class="button" type="submit" value="Login"/>
-    <input class="button" type="button" name="cancel" value="Cancel" onClick="window.location='index.php';" />
+    <input class="button" type="button" name="cancel" value="Cancel" onClick="window.location='../index.php';" />
 </form>
 </div>
 <blockquote>
