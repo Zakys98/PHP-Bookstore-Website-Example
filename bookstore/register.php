@@ -65,15 +65,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 												}else{
 													$address = $_POST['address'];
 
-													$servername = "localhost";
-													$username = "root";
-													$password = "";
+													$servername = "pa211-mysql-server.mysql.database.azure.com";
+													$username = "xzakji02";
+													$password = "testtest123Z";
 
-													$conn = new mysqli($servername, $username, $password); 
+													$conn = new mysqli($servername, $username, $password);
 
 													if ($conn->connect_error) {
 													    die("Connection failed: " . $conn->connect_error);
-													} 
+													}
 
 													$sql = "USE bookstore";
 													$conn->query($sql);
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 														$id = $row['UserID'];
 													}
 
-													$sql = "INSERT INTO customer(CustomerName, CustomerPhone, CustomerIC, CustomerEmail, CustomerAddress, CustomerGender, UserID) 
+													$sql = "INSERT INTO customer(CustomerName, CustomerPhone, CustomerIC, CustomerEmail, CustomerAddress, CustomerGender, UserID)
 													VALUES('".$name."', '".$contact."', '".$ic."', '".$email."', '".$address."', '".$gender."', ".$id.")";
 													$conn->query($sql);
 
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			}
 		}
 	}
-}												
+}
 function test_input($data){
 	$data = trim($data);
 	$data = stripcslashes($data);

@@ -10,15 +10,15 @@
 session_start();
 
 if(isset($_SESSION['id'])){
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
+	$servername = "pa211-mysql-server.mysql.database.azure.com";
+	$username = "xzakji02";
+	$password = "testtest123Z";
 
-	$conn = new mysqli($servername, $username, $password); 
+	$conn = new mysqli($servername, $username, $password);
 
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
-	} 
+	}
 
 	$sql = "USE bookstore";
 	$conn->query($sql);
@@ -35,7 +35,7 @@ if(isset($_SESSION['id'])){
 	$sql = "SELECT * FROM cart";
 	$result = $conn->query($sql);
 	while($row = $result->fetch_assoc()){
-		$sql = "INSERT INTO `order`(CustomerID, BookID, DatePurchase, Quantity, TotalPrice, Status) 
+		$sql = "INSERT INTO `order`(CustomerID, BookID, DatePurchase, Quantity, TotalPrice, Status)
 		VALUES(".$row['CustomerID'].", '".$row['BookID']
 		."', CURRENT_TIME, ".$row['Quantity'].", ".$row['TotalPrice'].", 'N')";
 		$conn->query($sql);
@@ -135,23 +135,23 @@ if(isset($_POST['submitButton'])){
 										}else{
 											$address = $_POST['address'];
 
-											$servername = "localhost";
-											$username = "root";
-											$password = "";
+											$servername = "pa211-mysql-server.mysql.database.azure.com";
+											$username = "xzakji02";
+											$password = "testtest123Z";
 
-											$conn = new mysqli($servername, $username, $password); 
+											$conn = new mysqli($servername, $username, $password);
 
 											if ($conn->connect_error) {
 											    die("Connection failed: " . $conn->connect_error);
-											} 
+											}
 
 											$sql = "USE bookstore";
 											$conn->query($sql);
 
-											$sql = "INSERT INTO customer(CustomerName, CustomerPhone, CustomerIC, CustomerEmail, CustomerAddress, CustomerGender) 
+											$sql = "INSERT INTO customer(CustomerName, CustomerPhone, CustomerIC, CustomerEmail, CustomerAddress, CustomerGender)
 											VALUES('".$name."', '".$contact."', '".$ic."', '".$email."', '".$address."', '".$gender."')";
 											$conn->query($sql);
- 
+
 											$sql = "SELECT CustomerID from customer WHERE CustomerName = '".$name."' AND CustomerIC = '".$ic."'";
 											$result = $conn->query($sql);
 											while($row = $result->fetch_assoc()){
@@ -164,7 +164,7 @@ if(isset($_POST['submitButton'])){
 											$sql = "SELECT * FROM cart";
 											$result = $conn->query($sql);
 											while($row = $result->fetch_assoc()){
-												$sql = "INSERT INTO `order`(CustomerID, BookID, DatePurchase, Quantity, TotalPrice, Status) 
+												$sql = "INSERT INTO `order`(CustomerID, BookID, DatePurchase, Quantity, TotalPrice, Status)
 												VALUES(".$row['CustomerID'].", '".$row['BookID']
 												."', CURRENT_TIME, ".$row['Quantity'].", ".$row['TotalPrice'].", 'N')";
 												$conn->query($sql);
@@ -189,7 +189,7 @@ function test_input($data){
 	return $data;
 }
 ?>
-<style> 
+<style>
 header {
 	background-color: rgb(0,51,102);
 	width: 100%;
@@ -202,7 +202,7 @@ header .hi{
     border: none;
     border-radius: 20px;
     text-align: center;
-    transition-duration: 0.5s; 
+    transition-duration: 0.5s;
     padding: 8px 30px;
     cursor: pointer;
     color: #000;
@@ -240,7 +240,7 @@ textarea:focus {
     border: none;
     border-radius: 20px;
     text-align: center;
-    transition-duration: 0.5s; 
+    transition-duration: 0.5s;
     padding: 8px 30px;
     cursor: pointer;
     color: #fff;
@@ -305,15 +305,15 @@ if(!isset($_SESSION['id'])){
 }
 
 if(isset($_POST['submitButton'])){
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
+	$servername = "pa211-mysql-server.mysql.database.azure.com";
+	$username = "xzakji02";
+	$password = "testtest123Z";
 
-	$conn = new mysqli($servername, $username, $password); 
+	$conn = new mysqli($servername, $username, $password);
 
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
-	} 
+	}
 
 	$sql = "USE bookstore";
 	$conn->query($sql);

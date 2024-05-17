@@ -12,15 +12,15 @@ $oEmail;
 $oPhone;
 $oAddress;
 
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "pa211-mysql-server.mysql.database.azure.com";
+$username = "xzakji02";
+$password = "testtest123Z";
 
-$conn = new mysqli($servername, $username, $password); 
+$conn = new mysqli($servername, $username, $password);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 
 $sql = "USE bookstore";
 $conn->query($sql);
@@ -101,15 +101,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 												}else{
 													$address = $_POST['address'];
 
-													$servername = "localhost";
-													$username = "root";
-													$password = "";
+													$servername = "pa211-mysql-server.mysql.database.azure.com";
+													$username = "xzakji02";
+													$password = "testtest123Z";
 
-													$conn = new mysqli($servername, $username, $password); 
+													$conn = new mysqli($servername, $username, $password);
 
 													if ($conn->connect_error) {
 													    die("Connection failed: " . $conn->connect_error);
-													} 
+													}
 
 													$sql = "USE bookstore";
 													$conn->query($sql);
@@ -118,8 +118,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 													.$_SESSION['id']."";
 													$conn->query($sql);
 
-													$sql = "UPDATE customer SET CustomerName = '".$name."', CustomerPhone = '".$contact."', 
-													CustomerIC = '".$ic."', CustomerEmail = '".$email."', CustomerAddress = '".$address."', 
+													$sql = "UPDATE customer SET CustomerName = '".$name."', CustomerPhone = '".$contact."',
+													CustomerIC = '".$ic."', CustomerEmail = '".$email."', CustomerAddress = '".$address."',
 													CustomerGender = '".$gender."'";
 													$conn->query($sql);
 
@@ -136,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			}
 		}
 	}
-}												
+}
 function test_input($data){
 	$data = trim($data);
 	$data = stripcslashes($data);
@@ -182,7 +182,7 @@ function test_input($data){
 	<label>Address:</label><br>
     <textarea name="address" cols="50" rows="5" placeholder="<?php echo $oAddress; ?>"></textarea>
     <span class="error" style="color: red; font-size: 0.8em;"><?php echo $addressErr;?></span><br><br>
-	
+
 	<input class="button" type="submit" name="submitButton" value="Edit">
 	<input class="button" type="button" name="cancel" value="Cancel" onClick="window.location='index.php';" />
 </form>
