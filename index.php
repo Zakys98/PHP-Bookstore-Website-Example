@@ -1,7 +1,7 @@
 <html>
 <meta http-equiv="Content-Type"'.' content="text/html; charset=utf8"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="bookstore/style.css">
+<link rel="stylesheet" href="style.css">
 <body>
 <?php
 session_start();
@@ -71,9 +71,9 @@ session_start();
 if(isset($_SESSION['id'])){
 	echo '<header>';
 	echo '<blockquote>';
-	echo '<a href="index.php"><img src="bookstore/image/logo.png"></a>';
-	echo '<form class="hf" action="bookstore/logout.php"><input class="hi" type="submit" name="submitButton" value="Logout"></form>';
-	echo '<form class="hf" action="bookstore/edituser.php"><input class="hi" type="submit" name="submitButton" value="Edit Profile"></form>';
+	echo '<a href="index.php"><img src="image/logo.png"></a>';
+	echo '<form class="hf" action="logout.php"><input class="hi" type="submit" name="submitButton" value="Logout"></form>';
+	echo '<form class="hf" action="edituser.php"><input class="hi" type="submit" name="submitButton" value="Edit Profile"></form>';
 	echo '</blockquote>';
 	echo '</header>';
 }
@@ -81,9 +81,9 @@ if(isset($_SESSION['id'])){
 if(!isset($_SESSION['id'])){
 	echo '<header>';
 	echo '<blockquote>';
-	echo '<a href="index.php"><img src="bookstore/image/logo.png"></a>';
-	echo '<form class="hf" action="bookstore/register.php"><input class="hi" type="submit" name="submitButton" value="Register"></form>';
-	echo '<form class="hf" action="bookstore/login.php"><input class="hi" type="submit" name="submitButton" value="Login"></form>';
+	echo '<a href="index.php"><img src="image/logo.png"></a>';
+	echo '<form class="hf" action="register.php"><input class="hi" type="submit" name="submitButton" value="Register"></form>';
+	echo '<form class="hf" action="login.php"><input class="hi" type="submit" name="submitButton" value="Login"></form>';
 	echo '</blockquote>';
 	echo '</header>';
 }
@@ -120,7 +120,7 @@ echo '<blockquote>';
     	$total += $row['TotalPrice'];
     }
     echo "<tr><td style='text-align: right;background-color: #f2f2f2;''>";
-    echo "Total: <b>RM".$total."</b><center><form action='bookstore/checkout.php' method='post'><input class='button' type='submit' name='checkout' value='CHECKOUT'></form></center>";
+    echo "Total: <b>RM".$total."</b><center><form action='checkout.php' method='post'><input class='button' type='submit' name='checkout' value='CHECKOUT'></form></center>";
     echo "</td></tr>";
 	echo "</table>";
 	echo '</blockquote>';
