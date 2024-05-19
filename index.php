@@ -1,7 +1,7 @@
 <html>
 <meta http-equiv="Content-Type"'.' content="text/html; charset=utf8"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://pa211blob.blob.core.windows.net/pa211container/style.css">
 <body>
 <?php
 session_start();
@@ -71,7 +71,7 @@ session_start();
 if(isset($_SESSION['id'])){
 	echo '<header>';
 	echo '<blockquote>';
-	echo '<a href="index.php"><img src="image/logo.png"></a>';
+	echo '<a href="index.php"><img src="https://pa211blob.blob.core.windows.net/pa211container/logo.png"></a>';
 	echo '<form class="hf" action="logout.php"><input class="hi" type="submit" name="submitButton" value="Logout"></form>';
 	echo '<form class="hf" action="edituser.php"><input class="hi" type="submit" name="submitButton" value="Edit Profile"></form>';
 	echo '</blockquote>';
@@ -81,7 +81,7 @@ if(isset($_SESSION['id'])){
 if(!isset($_SESSION['id'])){
 	echo '<header>';
 	echo '<blockquote>';
-	echo '<a href="index.php"><img src="image/logo.png"></a>';
+	echo '<a href="index.php"><img src="https://pa211blob.blob.core.windows.net/pa211container/logo.png"></a>';
 	echo '<form class="hf" action="register.php"><input class="hi" type="submit" name="submitButton" value="Register"></form>';
 	echo '<form class="hf" action="login.php"><input class="hi" type="submit" name="submitButton" value="Login"></form>';
 	echo '</blockquote>';

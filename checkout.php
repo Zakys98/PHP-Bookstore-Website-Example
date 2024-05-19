@@ -2,7 +2,7 @@
 <body style="font-family:Arial; margin: 0 auto; background-color: #f2f2f2;">
 <header>
 <blockquote>
-	<img src="image/logo.png">
+	<img src="https://pa211blob.blob.core.windows.net/pa211container/logo.png">
 	<input class="hi" style="float: right; margin: 2%;" type="button" name="cancel" value="Home" onClick="window.location='index.php';" />
 </blockquote>
 </header>
